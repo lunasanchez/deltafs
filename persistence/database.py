@@ -37,12 +37,10 @@ class DB(object):
     def saveStatus(self, fs):
         if fs is not None:
             f = self.DBS.query(ORMStatus).filter(ORMStatus.fs_id == fs.getId(),
-                                                 ORMStatus.status_date == date.today())[0]
-            if f is not None:
-                s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
-                self.DBS.add(s)
-                self.DBS.commit()
-            else:
+                                                 ORMStatus.status_date.like(
+                                                     "{}%".format(date.today()))
+                                                )[0]
+            if f is None:
                 s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
                 self.DBS.add(s)
                 self.DBS.commit()
