@@ -3,36 +3,47 @@ __revision__ = "$"
 __version__ = "$"
 __author__ = "theManda"
 
-from sqlalchemy import create_engine, exc, exists, and_
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-from persistence.orm import ORMNode, ORMFilesystem
+
+from persistence.orm import *
 
 
 class DB(object):
+
+    DBS = None
+
     def __init__(self, strConnect):
-        ''' strConnect = sqlite:///delta.db
+        ''' strConnect = 'sqlite:///delta.db'
         '''
-        self.engine = create_engine(strConnect, echo=True)
-        self.Session = sessionmaker(bind=self.engine)
-        self.connection = self.Session()
-        self.Base = declarative_base()
-        self.Base.metadata.create_all(self.engine, checkfirst=True)
-        self.connection.commit()
+        engine = create_engine(strConnect, echo=True)
+        Session = sessionmaker(bind=engine)
+        self.DBS = Session()
+        Base.metadata.create_all(engine, checkfirst=True)
         # con sqlite no respeta la constrain e inserta un id que no existe en node
 
-    def saveFS(self, node=None, fs=None):
+    def saveFS(self, node, fs):
+        if node is not None and fs is not None:
+            f = self.DBS.query(ORMFilesystem).filter(ORMFilesystem.fs_name==fs.getName(),
+                                                         ORMFilesystem.node_id==node.getId())[0]
+            if f is None:
+                f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
+                self.DBS.add(f)
+                self.DBS.commit()
+                self.DBS.refresh(f)
+                fs.setId(f.fs_id)
+            else:
+                fs.setId(f.fs_id)
+
+    def saveStatus(self, fs):
         if node is not None and fs is not None:
             try:
-                (ret, ), = self.connection.query(exists().where(ORMFilesystem.fs_name == fs.getName()))
+                (ret, ), = self.DBS.query(exists().where(
+                    (ORMFilesystem.fs_name==fs.getName())&(ORMFilesystem.node_id==node.getId())))
             except exc.OperationalError:
-                n = ORMNode(node.getName(), node.getOSName(), node.getUser(), node.getPassword())
-                self.connection.add(n)
-                self.connection.commit()
-            if ret:
-                self.connection.add(fs)
-                self.connection.commit()
-
+                raise
+            if not ret:
+                s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
+                self.DBS.add(s)
+                self.DBS.commit()
 
 
 if __name__ == '__main__':

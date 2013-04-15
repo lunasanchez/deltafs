@@ -5,6 +5,7 @@ __author__ = "theManda"
 
 
 class FileSystem(object):
+    _id = None
     _name = None
     _size = None
     _used = None
@@ -16,8 +17,11 @@ class FileSystem(object):
         self.setSize(size)
         self.setUsed(used)
 
-    def getFS(self, id):
-        self._id = id
+    def setId(self, fid):
+        self._id = fid
+
+    def getId(self):
+        return self._id
 
     def setName(self, name):
         self._name = name

@@ -24,7 +24,7 @@ class Collector(object):
             fsc = FSCollector()
             fsc.sshConnect(n)
             fsc.collectingNodeInfo(n)
-            sleep(2)
+            sleep(100)
 
     def getDataFrom(self, node=None):
         pass

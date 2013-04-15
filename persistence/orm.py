@@ -4,9 +4,9 @@ __version__ = "$"
 __author__ = "theManda"
 
 from sqlalchemy import Column, ForeignKey, DateTime, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, exc, exists
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from datetime import date
 
 Base = declarative_base()
