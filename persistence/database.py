@@ -22,8 +22,8 @@ class DB(object):
 
     def saveFS(self, node, fs):
         if node is not None and fs is not None:
-            f = self.DBS.query(ORMFilesystem).filter(ORMFilesystem.fs_name==fs.getName(),
-                                                         ORMFilesystem.node_id==node.getId())[0]
+            f = self.DBS.query(ORMFilesystem).filter(ORMFilesystem.fs_name == fs.getName(),
+                                                     ORMFilesystem.node_id == node.getId())[0]
             if f is None:
                 f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
                 self.DBS.add(f)
@@ -32,15 +32,17 @@ class DB(object):
                 fs.setId(f.fs_id)
             else:
                 fs.setId(f.fs_id)
+            self.saveStatus(fs)
 
     def saveStatus(self, fs):
-        if node is not None and fs is not None:
-            try:
-                (ret, ), = self.DBS.query(exists().where(
-                    (ORMFilesystem.fs_name==fs.getName())&(ORMFilesystem.node_id==node.getId())))
-            except exc.OperationalError:
-                raise
-            if not ret:
+        if fs is not None:
+            f = self.DBS.query(ORMStatus).filter(ORMStatus.fs_id == fs.getId(),
+                                                 ORMStatus.status_date == date.today())[0]
+            if f is not None:
+                s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
+                self.DBS.add(s)
+                self.DBS.commit()
+            else:
                 s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
                 self.DBS.add(s)
                 self.DBS.commit()
