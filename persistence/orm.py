@@ -5,6 +5,8 @@ __author__ = "theManda"
 
 from sqlalchemy import Column, ForeignKey, DateTime, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from datetime import date
 
 Base = declarative_base()
@@ -18,9 +20,11 @@ class ORMNode(Base):
     node_login = Column(String, unique=True, nullable=False)
     node_password = Column(String, unique=True, nullable=False)
 
-    def __init__(self, name, os):
+    def __init__(self, name, os, login, passwd):
         self.node_name = name
         self.node_os_name = os
+        self.node_login = login
+        self.node_password = passwd
 
 
 class ORMFilesystem(Base):
@@ -30,7 +34,8 @@ class ORMFilesystem(Base):
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
 
-    def __init__(self, name, pmount):
+    def __init__(self, node_id, name, pmount):
+        self.node_id = node_id
         self.fs_name = name
         self.fs_pmount = pmount
 
@@ -43,18 +48,24 @@ class ORMStatus(Base):
     status_used = Column(Integer, nullable=False)
     status_date = Column(DateTime, nullable=False)
 
-    def __init__(self, fs, size, used):
-        self.fs_id = fs.getId()
+    def __init__(self, fs_id, size, used):
+        self.fs_id = fs_id
         self.status_size = size
         self.status_used = used
         self.status_date = date.today()
 
 if __name__ == '__main__':
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
     strConnect = 'sqlite:///delta.db'
     engine = create_engine(strConnect, echo=True)
     Session = sessionmaker(bind=engine)
     connection = Session()
-    Base = declarative_base()
     Base.metadata.create_all(engine)
+    s = ORMStatus(1, 31333236, 16753516)
+    n = ORMNode('localhost', 'Linux', 'root', 'sinclave')
+    f = ORMFilesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
+    connection.add(n)
+    connection.commit()
+    connection.add(f)
+    connection.commit()
+    connection.add(s)
+    connection.commit()
