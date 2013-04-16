@@ -1,3 +1,5 @@
+import exceptions
+
 __copyright__ = "Copyright (C) 2013 Jorge A. Medina"
 __revision__ = "$"
 __version__ = "$"
@@ -28,8 +30,11 @@ class DB(object):
                 self.dbs.add(n)
                 self.dbs.commit()
                 self.dbs.refresh(n)
-            f = self.dbs.query(ORMFilesystem).filter(ORMFilesystem.fs_name == fs.getName(),
-                                                     ORMFilesystem.node_id == node.getId())[0]
+            try:
+                f = self.dbs.query(ORMFilesystem).filter(ORMFilesystem.fs_name == fs.getName(),
+                                                         ORMFilesystem.node_id == n.node_id)[0]
+            except exceptions.IndexError:
+                raise
             if f is None:
                 f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
                 self.dbs.add(f)
