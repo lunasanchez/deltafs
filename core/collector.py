@@ -24,7 +24,7 @@ class Collector(object):
             fsc = FSCollector()
             fsc.sshConnect(n)
             fsc.collectingNodeInfo(n)
-            sleep(100)
+            sleep(3)
 
     def getDataFrom(self, node=None):
         pass
@@ -95,9 +95,22 @@ class FSCollector(object):
         for rs in df.split('\n'):
             row = rs.split()
             if i > 0 and len(row) > 0:
-                fsList.append(FileSystem(row[0], row[5], row[2], row[3]))
+                fs = FileSystem(row[0], row[5], row[2], row[3])
+                if not self._existFS(fsList, fs):
+                    fsList.append(fs)
             i += 1
         return fsList
+
+    def _existFS(self, fsList, fs):
+
+        if len(fsList) == 0:
+            return False
+
+        for fsInst in fsList:
+            if fsInst.getName() == fs.getName():
+                return True
+
+        return False
 
     def setFSList(self, node, FSList):
         for fs in FSList:
