@@ -37,19 +37,25 @@ class DB(object):
                 self.dbs.commit()
                 self.dbs.refresh(n)
             try:
+                # fail because don't get anything, working in progress
                 f = self.dbs.query(ORMFilesystem).filter(ORMFilesystem.fs_name == fs.getName(),
-                                                         ORMFilesystem.node_id == n.node_id)[0]
-            except:
-                raise
+                                                         ORMFilesystem.node_id == n.node_id).one()
 
-            if f is None:
+                if f is None:
+                    f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
+                    self.dbs.add(f)
+                    self.dbs.commit()
+                    self.dbs.refresh(f)
+                    fs.setId(f.fs_id)
+                else:
+                    fs.setId(f.fs_id)
+            except:
                 f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
                 self.dbs.add(f)
                 self.dbs.commit()
                 self.dbs.refresh(f)
                 fs.setId(f.fs_id)
-            else:
-                fs.setId(f.fs_id)
+                raise
             self.saveStatus(fs)
 
     def saveStatus(self, fs):

@@ -87,7 +87,7 @@ class FSCollector(object):
 
     def parseStdOut(self, df):
         """
-        parse all standard df output btw
+        parse all standard df output
         :param: output
         :return: list
         """
