@@ -1,5 +1,3 @@
-import exceptions
-
 __copyright__ = "Copyright (C) 2013 Jorge A. Medina"
 __revision__ = "$"
 __version__ = "$"
@@ -20,7 +18,14 @@ class DB(object):
         Session = sessionmaker(bind=engine)
         self.dbs = Session()
         Base.metadata.create_all(engine, checkfirst=True)
+        self.dbs.commit()
         # con sqlite no respeta la constrain e inserta un id que no existe en node
+
+    def saveNode(self, node):
+        if node is not None:
+            n = ORMNode(node.getName(), node.getOSName(), node.getUser(), node.getPassword())
+            self.dbs.add(n)
+            self.dbs.commit()
 
     def saveFS(self, node, fs):
         if node is not None and fs is not None:
@@ -33,8 +38,9 @@ class DB(object):
             try:
                 f = self.dbs.query(ORMFilesystem).filter(ORMFilesystem.fs_name == fs.getName(),
                                                          ORMFilesystem.node_id == n.node_id)[0]
-            except exceptions.IndexError:
+            except:
                 raise
+
             if f is None:
                 f = ORMFilesystem(node.getId(), fs.getName(), fs.getMountOn())
                 self.dbs.add(f)
