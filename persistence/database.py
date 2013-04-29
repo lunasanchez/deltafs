@@ -12,14 +12,15 @@ class DB(object):
     dbs = None
 
     def __init__(self, strConnect):
-        ''' strConnect = 'sqlite:///delta.db'
-        '''
+        """
+        strConnect = 'sqlite:///delta.db'
+        """
         engine = create_engine(strConnect, echo=True)
         Session = sessionmaker(bind=engine)
         self.dbs = Session()
         Base.metadata.create_all(engine, checkfirst=True)
         self.dbs.commit()
-        # con sqlite no respeta la constrain e inserta un id que no existe en node
+        # con sqlite no respeta o respeta cuando quiere la constrain e inserta un id que no existe en node
 
     def saveNode(self, node):
         if node is not None:
@@ -53,14 +54,9 @@ class DB(object):
 
     def saveStatus(self, fs):
         if fs is not None:
-            f = self.dbs.query(ORMStatus).filter(ORMStatus.fs_id == fs.getId(),
-                                                 ORMStatus.status_date.like(
-                                                     "{}%".format(date.today()))
-                                                )[0]
-            if f is None:
-                s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
-                self.dbs.add(s)
-                self.dbs.commit()
+            s = ORMStatus(fs.getId(), fs.getSize(), fs.getUsed())
+            self.dbs.add(s)
+            self.dbs.commit()
 
 
 if __name__ == '__main__':

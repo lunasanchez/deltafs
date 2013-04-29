@@ -80,15 +80,16 @@ class FSCollector(object):
             out = stdout.read()
         except SSHException:
             print('ssh error')
+        if cmd == 'bdf':
+            self.setFSList(node, self.parseHPUXOut(out))
+        else:
+            self.setFSList(node, self.parseStdOut(out))
 
-        self.setFSList(node, self.getFSList(out))
-        print('collectingNodeInfo')
-
-    def getFSList(self, df):
+    def parseStdOut(self, df):
         """
-
-        :param output:
-        :return:
+        parse all standard df output btw
+        :param: output
+        :return: list
         """
         fsList = []
         i = 0
@@ -100,6 +101,12 @@ class FSCollector(object):
                     fsList.append(fs)
             i += 1
         return fsList
+
+    def parseHPUXOut(self, df):
+        """
+        TODO: implement method by OS output hpux has different output.
+        """
+        pass
 
     def _existFS(self, fsList, fs):
 
