@@ -70,27 +70,25 @@ class FSCollector(object):
             print("ssh connection error {}".format(sshErr))
 
     def collectingNodeInfo(self, node):
-        out = None
-        if node._os == 'HP-UX':
-            cmd = 'bdf'
-        else:
-            cmd = 'df -k'
-        try:
-            stdin, stdout, stderr = self._ssh.exec_command(cmd)
-            out = stdout.read()
-        except SSHException:
-            print('ssh error')
-        if cmd == 'bdf':
-            self.setFSList(node, self.parseHPUXOut(out))
-        else:
-            self.setFSList(node, self.parseStdOut(out))
 
-    def parseStdOut(self, df):
+        if node._os == 'HP-UX':
+            self.setFSList(node, self.parseHPUXOut())
+        else:
+            self.setFSList(node, self.parseStdOut())
+
+    def parseStdOut(self):
         """
         parse all standard df output
         :param: output
         :return: list
         """
+        df = None
+        cmd = 'df -k'
+        try:
+            stdin, stdout, stderr = self._ssh.exec_command(cmd)
+            df = stdout.read()
+        except SSHException:
+            print('ssh error')
         fsList = []
         i = 0
         for rs in df.split('\n'):
@@ -102,11 +100,27 @@ class FSCollector(object):
             i += 1
         return fsList
 
-    def parseHPUXOut(self, df):
+    def parseHPUXOut(self):
         """
         TODO: implement method by OS output hpux has different output.
         """
-        pass
+        df = None
+        cmd = 'bdf'
+        try:
+            stdin, stdout, stderr = self._ssh.exec_command(cmd)
+            df = stdout.read()
+        except SSHException:
+            print('ssh error')
+        fsList = []
+        i = 0
+        for rs in df.split('\n'):
+            row = rs.split()
+            if i > 0 and len(row) > 0:
+                fs = FileSystem(row[0], row[5], row[2], row[3])
+                if not self._existFS(fsList, fs):
+                    fsList.append(fs)
+            i += 1
+        return fsList
 
     def _existFS(self, fsList, fs):
 

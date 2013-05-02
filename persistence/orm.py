@@ -5,7 +5,7 @@ __author__ = "theManda"
 
 from sqlalchemy import Column, ForeignKey, DateTime, Integer, String
 from sqlalchemy import create_engine, exc, exists
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import date
 
@@ -30,9 +30,10 @@ class ORMNode(Base):
 class ORMFilesystem(Base):
     __tablename__ = 'filesystem'
     fs_id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    node_id = Column(Integer, ForeignKey('node.node_id'))
+    node_id = Column(Integer, ForeignKey('ORMNode.node_id'))
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
+    #parent = relationship("ORMNode", backref=backref('children'))
 
     def __init__(self, node_id, name, pmount):
         self.node_id = node_id
