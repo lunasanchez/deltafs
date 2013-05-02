@@ -103,7 +103,7 @@ class FSCollector(object):
     def parseHPUXOut(self):
         """
         TODO: implement method by OS output hpux has different output.
-        caca
+        parse double lines with large paths
         """
         df = None
         cmd = 'bdf'
