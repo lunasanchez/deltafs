@@ -26,19 +26,27 @@ class Node(Base):
         self.node_login = login
         self.node_password = passwd
 
+    filesystem = relationship("Filesystem",
+                              order_by="Filesystem.fs_id",
+                              backref="node")
+
 
 class Filesystem(Base):
     __tablename__ = 'filesystem'
     fs_id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    node_id = Column(Integer, ForeignKey('Node.node_id'))
+    node_id = Column(Integer, ForeignKey('node.node_id'))
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
-    #parent = relationship("Node", backref=backref('children'))
+    node = relationship("Node")
 
     def __init__(self, node_id, name, pmount):
         self.node_id = node_id
         self.fs_name = name
         self.fs_pmount = pmount
+
+    status = relationship("Status",
+                          order_by="Status.status_id",
+                          backref="filesystem")
 
 
 class Status(Base):
@@ -48,6 +56,8 @@ class Status(Base):
     status_size = Column(Integer, nullable=False)
     status_used = Column(Integer, nullable=False)
     status_date = Column(DateTime, nullable=False)
+
+    filesystem = relationship("Filesystem")
 
     def __init__(self, fs_id, size, used):
         self.fs_id = fs_id
@@ -61,12 +71,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     connection = Session()
     Base.metadata.create_all(engine)
-    s = Status(1, 31333236, 16753516)
     n = Node('localhost', 'Linux', 'root', 'sinclave')
-    f = Filesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
+    n.filesystem = Filesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
+    n.filesystem.status = Status(1, 31333236, 16753516)
     connection.add(n)
-    connection.commit()
-    connection.add(f)
-    connection.commit()
-    connection.add(s)
     connection.commit()
