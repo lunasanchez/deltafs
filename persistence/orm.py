@@ -5,14 +5,14 @@ __author__ = "theManda"
 
 from sqlalchemy import Column, ForeignKey, DateTime, Integer, String
 from sqlalchemy import create_engine, exc, exists
-from sqlalchemy.orm import sessionmaker, relationship, backref
+from sqlalchemy.orm import sessionmaker, synonym, relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import date
 
 Base = declarative_base()
 
 
-class ORMNode(Base):
+class Node(Base):
     __tablename__ = 'node'
     node_id = Column(Integer, primary_key=True, unique=True, nullable=False)
     node_name = Column(String, unique=True, nullable=False)
@@ -27,13 +27,13 @@ class ORMNode(Base):
         self.node_password = passwd
 
 
-class ORMFilesystem(Base):
+class Filesystem(Base):
     __tablename__ = 'filesystem'
     fs_id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    node_id = Column(Integer, ForeignKey('ORMNode.node_id'))
+    node_id = Column(Integer, ForeignKey('Node.node_id'))
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
-    #parent = relationship("ORMNode", backref=backref('children'))
+    #parent = relationship("Node", backref=backref('children'))
 
     def __init__(self, node_id, name, pmount):
         self.node_id = node_id
@@ -41,7 +41,7 @@ class ORMFilesystem(Base):
         self.fs_pmount = pmount
 
 
-class ORMStatus(Base):
+class Status(Base):
     __tablename__ = 'status'
     status_id = Column(Integer, primary_key=True, unique=True, nullable=False)
     fs_id = Column(Integer, ForeignKey('filesystem.fs_id'))
@@ -61,9 +61,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     connection = Session()
     Base.metadata.create_all(engine)
-    s = ORMStatus(1, 31333236, 16753516)
-    n = ORMNode('localhost', 'Linux', 'root', 'sinclave')
-    f = ORMFilesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
+    s = Status(1, 31333236, 16753516)
+    n = Node('localhost', 'Linux', 'root', 'sinclave')
+    f = Filesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
     connection.add(n)
     connection.commit()
     connection.add(f)
