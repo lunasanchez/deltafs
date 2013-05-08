@@ -28,7 +28,7 @@ class Node(Base):
 
     filesystem = relationship("Filesystem",
                               order_by="Filesystem.fs_id",
-                              backref="node")
+                              back_populates="node")
 
 
 class Filesystem(Base):
@@ -37,6 +37,7 @@ class Filesystem(Base):
     node_id = Column(Integer, ForeignKey('node.node_id'))
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
+    
     node = relationship("Node")
 
     def __init__(self, node_id, name, pmount):
@@ -46,9 +47,8 @@ class Filesystem(Base):
 
     status = relationship("Status",
                           order_by="Status.status_id",
-                          backref="filesystem")
-
-
+                          back_populates="filesystem")
+    
 class Status(Base):
     __tablename__ = 'status'
     status_id = Column(Integer, primary_key=True, unique=True, nullable=False)
@@ -56,7 +56,7 @@ class Status(Base):
     status_size = Column(Integer, nullable=False)
     status_used = Column(Integer, nullable=False)
     status_date = Column(DateTime, nullable=False)
-
+    
     filesystem = relationship("Filesystem")
 
     def __init__(self, fs_id, size, used):
