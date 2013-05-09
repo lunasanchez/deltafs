@@ -71,8 +71,15 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     connection = Session()
     Base.metadata.create_all(engine)
-    n = Node('localhost', 'Linux', 'root', 'sinclave')
-    n.filesystem = Filesystem(1, '/dev/mapper/vg_sys-lv_root', '/')
-    n.filesystem.status = Status(1, 31333236, 16753516)
+    n = connection.query(Node).filter(name='localhost').one()
+    if not(p):
+        n = Node('localhost', 'Linux', 'root', 'sinclave')
+        connection.add(n)
+        connection.commit()
+        connection.refresh(n)
+    fs = connection.query(Filesystem).filter(node_id=n.node_id, fs_name='/dev/mapper/vg_sys-lv_root').one()
+    if not(fs):
+        n.filesystem.append(fs)
+    n.filesystem.status.append(Status(fs_id=fs.fs_id, size=100, used=30))
     connection.add(n)
     connection.commit()
