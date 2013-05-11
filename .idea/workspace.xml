@@ -10,14 +10,15 @@
     </list>
     <ignored path="deltafs.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/collector.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368280634825" ignored="false" />
+    <file path="/collector.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368302224222" ignored="false" />
     <file path="/a.dummy" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1365702197892" ignored="false" />
-    <file path="/base.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1366009063532" ignored="false" />
+    <file path="/base.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368301877220" ignored="false" />
     <file path="/dao.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1365711112829" ignored="false" />
-    <file path="/main.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368279185361" ignored="false" />
-    <file path="/orm.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368277607442" ignored="false" />
-    <file path="/database.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368280834461" ignored="false" />
+    <file path="/main.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305090436" ignored="false" />
+    <file path="/orm.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368281999788" ignored="false" />
+    <file path="/database.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305199362" ignored="false" />
     <file path="/Dummy.txt" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1366056683956" ignored="false" />
+    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305250225" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +45,10 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="8" column="26" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#115#151#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +56,7 @@
       <file leaf-file-name="collector.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="13" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.0">
+            <state line="137" column="20" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#114#136#0" expanded="true" />
               </folding>
@@ -61,10 +64,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.18922019">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="orm.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/persistence/orm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="25" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
+            <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#115#183#0" expanded="true" />
               </folding>
@@ -72,11 +93,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dao.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dao.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/persistence/dao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="33" selection-start="759" selection-end="759" vertical-scroll-proportion="0.12270642">
-              <folding />
+            <state line="8" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#115#146#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,12 +126,13 @@
     <option name="changedFiles">
       <list>
         <option value="$USER_HOME$/.PyCharm20/system/python_stubs/-1247972723/__builtin__.py" />
-        <option value="$PROJECT_DIR$/core/base.py" />
-        <option value="$PROJECT_DIR$/persistence/orm.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/persistence/database.py" />
+        <option value="$PROJECT_DIR$/persistence/orm.py" />
         <option value="$PROJECT_DIR$/core/collector.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/persistence/dao.py" />
+        <option value="$PROJECT_DIR$/core/base.py" />
+        <option value="$PROJECT_DIR$/core/config.py" />
       </list>
     </option>
   </component>
@@ -503,28 +527,18 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/persistence/orm.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/persistence/orm.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/core/collector.py</url>
-          <line>23</line>
+          <line>25</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/core/collector.py</url>
-          <line>22</line>
+          <line>24</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/core/collector.py</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
@@ -535,16 +549,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/workspace/pyAgent/src/nixdaemon/AgentController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="163" selection-end="163" vertical-scroll-proportion="0.056064073" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/-1247972723/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="0.017162472" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/workspace/pyAgent/src/nixdaemon/eNgineAgent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -598,34 +602,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/orm.py">
+    <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="25" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#115#183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.3325688">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/collector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="13" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.0">
+        <state line="137" column="20" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#114#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#115#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/dao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="33" selection-start="759" selection-end="759" vertical-scroll-proportion="0.12270642">
+        <state line="8" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#115#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/orm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#115#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.18922019">
           <folding />
         </state>
       </provider>

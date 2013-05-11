@@ -65,6 +65,8 @@ class Status(Base):
         self.status_used = used
         self.status_date = date.today()
 
+
+
 if __name__ == '__main__':
     strConnect = 'sqlite:///delta.db'
     engine = create_engine(strConnect, echo=True)
@@ -79,9 +81,12 @@ if __name__ == '__main__':
         connection.refresh(n)
     fs = connection.query(Filesystem).filter(Filesystem.node_id==n.node_id,
                                              Filesystem.fs_name=='/dev/mapper/vg_sys-lv_demo').all()
+    fs = fs[0]
     if fs is None:
-        n.filesystem.append(Filesystem(n.node_id, '/dev/mapper/vg_sys-lv_demo', '/demo'))
-
+        fs = Filesystem(n.node_id, '/dev/mapper/vg_sys-lv_demo', '/demo')
+        connection.add(fs)
+        connection.commit()
+        connection.refresh(fs)
     s = Status(fs_id=fs.fs_id, size=100, used=30)
     connection.add(s)
     connection.commit()

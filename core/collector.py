@@ -9,6 +9,8 @@ from paramiko import SSHException
 from paramiko import BadHostKeyException
 from paramiko import AuthenticationException
 from persistence.dao import DAO
+from persistence.orm import *
+from core.base import FS
 
 
 class Collector(object):
@@ -70,7 +72,7 @@ class FSCollector(object):
 
     def collectingNodeInfo(self, node):
 
-        if node._os == 'HP-UX':
+        if node.node_os_name == 'HP-UX':
             self.setFSList(node, self.parseHPUXOut())
         else:
             self.setFSList(node, self.parseStdOut())
@@ -93,7 +95,7 @@ class FSCollector(object):
         for rs in df.split('\n'):
             row = rs.split()
             if i > 0 and len(row) > 0:
-                fs = FileSystem(row[0], row[5], row[2], row[3])
+                fs = FS(row[0], row[5], row[2], row[3])
                 if not self._existFS(fsList, fs):
                     fsList.append(fs)
             i += 1
@@ -116,19 +118,21 @@ class FSCollector(object):
         for rs in df.split('\n'):
             row = rs.split()
             if i > 0 and len(row) > 0:
-                fs = FileSystem(row[0], row[5], row[2], row[3])
+                fs = FS(row[0], row[5], row[2], row[3])
                 if not self._existFS(fsList, fs):
                     fsList.append(fs)
             i += 1
         return fsList
 
     def _existFS(self, fsList, fs):
-
+        """
+        Check for a existent fs
+        """
         if len(fsList) == 0:
             return False
 
         for fsInst in fsList:
-            if fsInst.getName() == fs.getName():
+            if fsInst.fs_name == fs.fs_name:
                 return True
 
         return False
@@ -136,7 +140,7 @@ class FSCollector(object):
     def setFSList(self, node, FSList):
         for fs in FSList:
             dao = DAO('sqlite:///delta.db')
-            dao.saveFS(node, fs)
+            dao.save_fs(node, fs)
 
     def __del__(self):
         self._ssh.close()
