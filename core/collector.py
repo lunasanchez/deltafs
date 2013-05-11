@@ -8,8 +8,7 @@ from paramiko import AutoAddPolicy
 from paramiko import SSHException
 from paramiko import BadHostKeyException
 from paramiko import AuthenticationException
-from core.base import FileSystem, Node
-from persistence.database import DB
+from persistence.dao import DAO
 
 
 class Collector(object):
@@ -17,17 +16,17 @@ class Collector(object):
     def __init__(self):
         pass
 
-    def mainLoop(self):
-        while True:
-            n = Node(id=1, name='localhost', osname='Linux', port='22', user='root', password='sinclave')
-            print("{}".format(n.getName()))
+    def main(self):
+        dao = DAO('sqlite:///delta.db')
+        for n in dao.get_node_list():
             fsc = FSCollector()
             fsc.sshConnect(n)
             fsc.collectingNodeInfo(n)
-            sleep(3)
 
-    def getDataFrom(self, node=None):
-        pass
+    def run(self):
+        while True:
+            self.main()
+            sleep(3)
 
 
 class FSCollector(object):
@@ -45,7 +44,7 @@ class FSCollector(object):
         """
         try:
             self._ssh.set_missing_host_key_policy(AutoAddPolicy())
-            self._ssh.connect(Node.getName(), username=Node.getUser(), password=Node.getPassword())
+            self._ssh.connect(Node.node_name, username=Node.node_loginr, password=Node.node_password)
         except BadHostKeyException as sshErr:
             print("ssh error: {}".format(sshErr))
         except AuthenticationException as sshErr:
@@ -136,8 +135,8 @@ class FSCollector(object):
 
     def setFSList(self, node, FSList):
         for fs in FSList:
-            db = DB('sqlite:///delta.db')
-            db.saveFS(node, fs)
+            dao = DAO('sqlite:///delta.db')
+            dao.saveFS(node, fs)
 
     def __del__(self):
         self._ssh.close()

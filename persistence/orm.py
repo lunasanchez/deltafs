@@ -38,16 +38,16 @@ class Filesystem(Base):
     fs_name = Column(String, unique=True, nullable=False)
     fs_pmount = Column(String, nullable=False)
     
-    node = relationship("Node")
+    node = relationship('Node')
 
     def __init__(self, node_id, name, pmount):
         self.node_id = node_id
         self.fs_name = name
         self.fs_pmount = pmount
 
-    status = relationship("Status",
-                          order_by="Status.status_id",
-                          back_populates="filesystem")
+    status = relationship('Status',
+                          back_populates='filesystem')
+
     
 class Status(Base):
     __tablename__ = 'status'
@@ -56,8 +56,8 @@ class Status(Base):
     status_size = Column(Integer, nullable=False)
     status_used = Column(Integer, nullable=False)
     status_date = Column(DateTime, nullable=False)
-    
-    filesystem = relationship("Filesystem")
+
+    filesystem = relationship('Filesystem')
 
     def __init__(self, fs_id, size, used):
         self.fs_id = fs_id
@@ -71,15 +71,17 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     connection = Session()
     Base.metadata.create_all(engine)
-    n = connection.query(Node).filter(name='localhost').one()
-    if not(p):
+    n = connection.query(Node).filter(Node.node_name=='localhost').one()
+    if not n:
         n = Node('localhost', 'Linux', 'root', 'sinclave')
         connection.add(n)
         connection.commit()
         connection.refresh(n)
-    fs = connection.query(Filesystem).filter(node_id=n.node_id, fs_name='/dev/mapper/vg_sys-lv_root').one()
-    if not(fs):
-        n.filesystem.append(fs)
-    n.filesystem.status.append(Status(fs_id=fs.fs_id, size=100, used=30))
-    connection.add(n)
+    fs = connection.query(Filesystem).filter(Filesystem.node_id==n.node_id,
+                                             Filesystem.fs_name=='/dev/mapper/vg_sys-lv_demo').all()
+    if fs is None:
+        n.filesystem.append(Filesystem(n.node_id, '/dev/mapper/vg_sys-lv_demo', '/demo'))
+
+    s = Status(fs_id=fs.fs_id, size=100, used=30)
+    connection.add(s)
     connection.commit()

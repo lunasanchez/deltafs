@@ -6,5 +6,4 @@ __author__ = "theManda"
 from core.collector import Collector
 
 if __name__ == '__main__':
-    agent = Collector()
-    agent.mainLoop()
+    agent = Collector().run()
