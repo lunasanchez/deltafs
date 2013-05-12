@@ -3,17 +3,20 @@ __revision__ = "$"
 __version__ = "$"
 __author__ = "theManda"
 
-
-from core.base import Singleton
-
-
-time_to_get = None
-cfg_path = None
+from ConfigParser import ConfigParser
+from base import Singleton
 
 
-class CfgParser(Singleton):
+class Config(Singleton):
 
-    def __init__(self):
-        global time_to_get
-        global cfg_path
-        time_to_get = 3
+    def __init__(self, cfg_file):
+        config = ConfigParser()
+        config.read(cfg_file)
+        stime = config.get('core', 'schedule_time')
+        dbname = config.get('database', 'dbname')
+
+    def get(self, item):
+        return self.__getattribute__(item)
+
+    def set(self, item, value):
+        self.__setattr__(item, value)
