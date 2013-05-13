@@ -7,27 +7,23 @@ from ConfigParser import ConfigParser
 from base import Singleton
 
 
-
-
 class Config(Singleton):
-
-    cfg = {}
-    cfg['core'] = {}
+    cfg = None
+    config = None
     cfg['core']['path'] = '/usr/local/deltafs'
     cfg['core']['schedule_time'] = 'montly'
-    cfg['database'] = {}
     cfg['database']['dbname'] = 'delta.db'
     cfg['database']['provider'] = 'sqlite'
 
     def __init__(self, cfg_file):
         config = ConfigParser()
         config.read(cfg_file)
-        for section in cfg.iterkeys():
-            for key in cfg[section].iteritems():
-                cfg[section][key] = config.get(section, key)
+        for section in self.cfg.iterkeys():
+            for key in self.cfg[section].iteritems():
+                self.cfg[section][key] = config.get(section, key)
 
-    def get(self, item):
-        return self.__getattribute__(item)
+    def get(self, section, item):
+        return self.config.get(section, item)
 
-    def set(self, item, value):
-        self.__setattr__(item, value)
+    def set(self, section, item, value):
+        self.config.set(section, item, value)

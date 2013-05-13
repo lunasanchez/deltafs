@@ -18,7 +18,7 @@
     <file path="/orm.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368281999788" ignored="false" />
     <file path="/database.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305199362" ignored="false" />
     <file path="/Dummy.txt" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1366056683956" ignored="false" />
-    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368403888498" ignored="false" />
+    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368405003052" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="22" selection-start="754" selection-end="754" vertical-scroll-proportion="0.5332569">
+            <state line="15" column="42" selection-start="416" selection-end="416" vertical-scroll-proportion="0.25802752">
               <folding>
                 <element signature="e#115#152#0" expanded="true" />
               </folding>
@@ -646,7 +646,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="22" selection-start="754" selection-end="754" vertical-scroll-proportion="0.5332569">
+        <state line="15" column="42" selection-start="416" selection-end="416" vertical-scroll-proportion="0.25802752">
           <folding>
             <element signature="e#115#152#0" expanded="true" />
           </folding>
