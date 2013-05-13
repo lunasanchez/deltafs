@@ -8,10 +8,12 @@ from base import Singleton
 
 
 class Config(Singleton):
-    cfg = None
     config = None
+    cfg = dict()
+    cfg['core'] = dict()
     cfg['core']['path'] = '/usr/local/deltafs'
     cfg['core']['schedule_time'] = 'montly'
+    cfg['database'] = dict()
     cfg['database']['dbname'] = 'delta.db'
     cfg['database']['provider'] = 'sqlite'
 
@@ -19,11 +21,10 @@ class Config(Singleton):
         config = ConfigParser()
         config.read(cfg_file)
         for section in self.cfg.iterkeys():
-            for key in self.cfg[section].iteritems():
+            for key, value in self.cfg[section].iteritems():
                 self.cfg[section][key] = config.get(section, key)
+                print self.cfg[section][key]
 
-    def get(self, section, item):
-        return self.config.get(section, item)
 
-    def set(self, section, item, value):
-        self.config.set(section, item, value)
+if __name__ == '__main__':
+    cfg = Config('delta.cfg')
