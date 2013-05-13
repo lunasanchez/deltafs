@@ -49,19 +49,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="store.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/persistence/store.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="43" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
+            <state line="16" column="8" selection-start="322" selection-end="322" vertical-scroll-proportion="0.09038901">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="786" selection-end="786" vertical-scroll-proportion="0.44622424">
+            <state line="19" column="33" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#115#152#0" expanded="true" />
               </folding>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/core/base.py" />
         <option value="$PROJECT_DIR$/core/collector.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/persistence/store.py" />
         <option value="$PROJECT_DIR$/core/config.py" />
+        <option value="$PROJECT_DIR$/persistence/store.py" />
       </list>
     </option>
   </component>
@@ -566,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="43" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -582,10 +575,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="786" selection-end="786" vertical-scroll-proportion="0.44622424">
+        <state line="19" column="33" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#115#152#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="8" selection-start="322" selection-end="322" vertical-scroll-proportion="0.09038901">
+          <folding />
         </state>
       </provider>
     </entry>

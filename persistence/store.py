@@ -14,8 +14,7 @@ class Store(Singleton):
     def __init__(self, strConnect):
         """
         strConnect = 'sqlite:///delta.db'
-        Nota:Con sqlite no respeta o respeta cuando quiere, la constrain e inserta un id que no existe en node
-        te fumaras el cigarro te callaras y vendras a pedir perdon por las formas
+        
         """
         engine = create_engine(strConnect, echo=True)
         SessionFactory = sessionmaker(bind=engine)
