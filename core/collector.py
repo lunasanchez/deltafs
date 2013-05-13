@@ -8,7 +8,7 @@ from paramiko import AutoAddPolicy
 from paramiko import SSHException
 from paramiko import BadHostKeyException
 from paramiko import AuthenticationException
-from persistence.dao import DAO
+from persistence.store import Store
 from persistence.orm import *
 from core.base import FS
 
@@ -19,8 +19,8 @@ class Collector(object):
         pass
 
     def main(self):
-        dao = DAO('sqlite:///delta.db')
-        for n in dao.get_node_list():
+        store = Store('sqlite:///delta.db')
+        for n in store.get_node_list():
             fsc = FSCollector()
             fsc.sshConnect(n)
             fsc.collectingNodeInfo(n)
@@ -139,8 +139,8 @@ class FSCollector(object):
 
     def setFSList(self, node, FSList):
         for fs in FSList:
-            dao = DAO('sqlite:///delta.db')
-            dao.save_fs(node, fs)
+            store = Store('sqlite:///delta.db')
+            store.save_fs(node, fs)
 
     def __del__(self):
         self._ssh.close()
