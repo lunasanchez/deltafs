@@ -7,7 +7,7 @@ from core.base import Singleton
 from persistence.orm import *
 
 
-class DAO(Singleton):
+class Store(Singleton):
 
     session = None
 
@@ -28,30 +28,30 @@ class DAO(Singleton):
             self.session.add(Node)
             self.session.commit()
 
-    def save_fs(self, node, FS):
+    def save_fs(self, node_id, fs_name, mount_on, size, used):
         if node is not None and FS is not None:
             try:
-                f = self.session.query(Filesystem).filter(Filesystem.fs_name == FS.get_name(),
-                                                          Filesystem.node_id == node.node_id).one()
+                f = self.session.query(Filesystem).filter(Filesystem.fs_name == fs_name,
+                                                          Filesystem.node_id == node_id).one()
                 if f is None:
-                    f = Filesystem(node.node_id, FS.get_name(), FS.get_mount_on())
+                    f = Filesystem(node_id, fs_name, mount_on)
                     self.session.add(f)
                     self.session.commit()
                     self.session.refresh(f)
-                    FS.fs_id = f.fs_id
+                    fs_id = f.fs_id
                 else:
-                    FS.fs_id = f.fs_id
+                    fs_id = f.fs_id
             except:
-                f = Filesystem(node.node_id, FS.get_name(), FS.get_mount_on())
+                f = Filesystem(node_id, fs_name, mount_on)
                 self.session.add(f)
                 self.session.commit()
                 self.session.refresh(f)
-                FS.set_id(f.fs_id)
+                fs_id = f.fs_id
                 raise
-            self.save_status(FS)
+            self.save_status(fs_id, size, used)
 
-    def save_status(self, FS):
-        status = Status(FS.get_id(), fs.get_size(), fs.get_used())
+    def save_status(self, fs_id, size, used):
+        status = Status(fs_id, size, used)
         self.session.add(status)
         self.session.commit()
 
@@ -61,4 +61,4 @@ class DAO(Singleton):
 
 
 if __name__ == '__main__':
-    dao = DAO('sqlite:///testdb.db')
+    store = Store('sqlite:///testdb.db')
