@@ -46,7 +46,7 @@ class FSCollector(object):
         """
         try:
             self._ssh.set_missing_host_key_policy(AutoAddPolicy())
-            self._ssh.connect(Node.node_name, username=Node.node_loginr, password=Node.node_password)
+            self._ssh.connect(Node.node_name, username=Node.node_login, password=Node.node_password)
         except BadHostKeyException as sshErr:
             print("ssh error: {}".format(sshErr))
         except AuthenticationException as sshErr:
@@ -132,7 +132,7 @@ class FSCollector(object):
             return False
 
         for fsInst in fsList:
-            if fsInst.fs_name == fs.fs_name:
+            if fsInst.get_name() == fs.get_name():
                 return True
 
         return False

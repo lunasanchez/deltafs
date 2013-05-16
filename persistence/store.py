@@ -3,7 +3,7 @@ __revision__ = "$"
 __version__ = "$"
 __author__ = "theManda"
 
-from core.base import Singleton
+from core.base import Singleton, FS
 from persistence.orm import *
 
 
@@ -14,7 +14,7 @@ class Store(Singleton):
     def __init__(self, strConnect):
         """
         strConnect = 'sqlite:///delta.db'
-        
+
         """
         engine = create_engine(strConnect, echo=True)
         SessionFactory = sessionmaker(bind=engine)
@@ -28,10 +28,10 @@ class Store(Singleton):
             self.session.commit()
 
     def save_fs(self, node, fs):
-        if node is not None and FS is not None:
+        if node is not None and fs is not None:
             try:
                 f = self.session.query(Filesystem).filter(Filesystem.fs_name == fs.get_name(),
-                                                          Filesystem.node_id == node.node_id).one()
+                                                          Filesystem.node_id == node.node_id).first()
                 if f is None:
                     f = Filesystem(node.node_id, fs.get_name(), fs.get_mount_on())
                     self.session.add(f)
