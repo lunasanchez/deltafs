@@ -3,7 +3,7 @@ __revision__ = "$"
 __version__ = "$"
 __author__ = "theManda"
 
-from ConfigParser import ConfigParser
+from ConfigParser import ConfigParser, RawConfigParser
 from base import Singleton
 
 
@@ -25,6 +25,24 @@ class Config(Singleton):
                 self.cfg[section][key] = config.get(section, key)
                 print self.cfg[section][key]
 
+    def _create_cfg(self, cfg_file):
+        config = RawConfigParser()
+        for section in self.cfg.iterkeys():
+            config.add_section(section)
+            for key, value in self.cfg[section].iteritems():
+                config.set(section, key, value)
+        with open(cfg_file, 'wb') as conf:
+            config.write(conf)
+
+
+    def _validate_cfg(self, cfg_file):
+        pass
+
+    def get(self, section, item):
+        pass
+
+    def set(self, setction, itme, value):
+        pass
 
 if __name__ == '__main__':
     cfg = Config('delta.cfg')
