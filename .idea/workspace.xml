@@ -4,9 +4,9 @@
     <list default="true" id="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/mnothic.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delta.db" afterPath="$PROJECT_DIR$/delta.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/collector.py" afterPath="$PROJECT_DIR$/core/collector.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/orm.py" afterPath="$PROJECT_DIR$/persistence/orm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delta.db" afterPath="$PROJECT_DIR$/delta.db" />
     </list>
     <ignored path="deltafs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,8 +18,12 @@
     <file path="/orm.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368281999788" ignored="false" />
     <file path="/database.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305199362" ignored="false" />
     <file path="/Dummy.txt" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1366056683956" ignored="false" />
-    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368853536707" ignored="false" />
+    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369492450431" ignored="false" />
     <file path="/store.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368733302834" ignored="false" />
+    <file path="/usr/lib/python2.7/pickle.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
+    <file path="/usr/lib/python2.7/tarfile.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
+    <file path="/usr/lib/python2.7/ConfigParser.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
+    <file path="/usr/lib/python2.7/xmlrpclib.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +58,7 @@
         <entry file="file://$PROJECT_DIR$/persistence/store.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="30" column="39" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#115#150#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="30" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.66731143">
-              <folding>
-                <element signature="e#115#169#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,8 +66,19 @@
       <file leaf-file-name="collector.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="0" selection-start="3860" selection-end="3860" vertical-scroll-proportion="0.0">
+            <state line="103" column="27" selection-start="2800" selection-end="2800" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="42" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.72477067">
+              <folding>
+                <element signature="e#115#222#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,9 +87,7 @@
         <entry file="file://$PROJECT_DIR$/persistence/orm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#115#183#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,7 +171,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,18 +205,19 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/persistence/orm.py" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/persistence/orm.py" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -243,6 +243,19 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
+      <module name="" />
+      <option name="PORT" value="0" />
+      <option name="HOST" value="null" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list />
+        </option>
+      </PathMappingSettings>
+      <option name="REDIRECT_OUTPUT" value="true" />
+      <option name="SUSPEND_AFTER_CONNECT" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -262,19 +275,6 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
-      <module name="" />
-      <option name="PORT" value="0" />
-      <option name="HOST" value="null" />
-      <PathMappingSettings>
-        <option name="pathMappings">
-          <list />
-        </option>
-      </PathMappingSettings>
-      <option name="REDIRECT_OUTPUT" value="true" />
-      <option name="SUSPEND_AFTER_CONNECT" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -412,11 +412,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26947704" sideWeight="0.60333335" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27267876" sideWeight="0.60333335" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39666668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="419" y="336" width="1433" height="394" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39666668" sideWeight="0.49626467" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39666668" sideWeight="0.49626467" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -491,6 +491,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/persistence/orm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/sql/expression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2236" column="0" selection-start="76297" selection-end="76297" vertical-scroll-proportion="-0.07602339" />
@@ -513,23 +520,17 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1115" column="0" selection-start="46680" selection-end="46680" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1115" column="0" selection-start="46680" selection-end="46680" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/orm/properties.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1229" column="42" selection-start="47266" selection-end="47266" vertical-scroll-proportion="0.62330097">
-          <folding />
-        </state>
+        <state line="1229" column="42" selection-start="47266" selection-end="47266" vertical-scroll-proportion="0.62330097" />
       </provider>
     </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="37" column="0" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/-1247972723/__builtin__.py">
@@ -541,17 +542,18 @@
     </entry>
     <entry file="file:///usr/lib/python2.7/test/cfgparser.1">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/orm/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2178" column="0" selection-start="81662" selection-end="81662" vertical-scroll-proportion="0.19679634" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/persistence/orm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#115#183#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -562,34 +564,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="0" selection-start="3860" selection-end="3860" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/orm/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2178" column="0" selection-start="81662" selection-end="81662" vertical-scroll-proportion="0.19679634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/store.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="39" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#115#150#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="27" selection-start="2800" selection-end="2800" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="30" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.66731143">
+        <state line="50" column="42" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.72477067">
           <folding>
-            <element signature="e#115#169#0" expanded="true" />
+            <element signature="e#115#222#0" expanded="true" />
           </folding>
         </state>
       </provider>
