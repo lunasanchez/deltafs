@@ -14,9 +14,7 @@ setup(name='DeltaFS',
       author_email='jorge@bsdchile.cl',
       url='http://github.com/mnothic/deltafs',
       packages=['src'],
+      install_requires=['paramiko>=1.7',
+                        'SQLAlchemy>=0.8'],
       )
 
-install_requires=[
-   'paramiko>=0.97',
-   'SQLAlchemy==0.5',
-]

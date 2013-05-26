@@ -24,7 +24,7 @@
     <file path="/usr/lib/python2.7/tarfile.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <file path="/usr/lib/python2.7/ConfigParser.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <file path="/usr/lib/python2.7/xmlrpclib.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
-    <file path="/setup.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369600387340" ignored="false" />
+    <file path="/setup.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369601285696" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <file leaf-file-name="setup.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.36123854">
+            <state line="14" column="46" selection-start="387" selection-end="387" vertical-scroll-proportion="0.24082568">
               <folding />
             </state>
           </provider>
@@ -602,7 +602,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.36123854">
+        <state line="14" column="46" selection-start="387" selection-end="387" vertical-scroll-proportion="0.24082568">
           <folding />
         </state>
       </provider>
