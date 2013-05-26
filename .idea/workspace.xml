@@ -5,8 +5,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/mnothic.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delta.db" afterPath="$PROJECT_DIR$/delta.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/collector.py" afterPath="$PROJECT_DIR$/core/collector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/orm.py" afterPath="$PROJECT_DIR$/persistence/orm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/collector.py" afterPath="$PROJECT_DIR$/src/core/collector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/persistence/orm.py" afterPath="$PROJECT_DIR$/src/persistence/orm.py" />
     </list>
     <ignored path="deltafs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,12 +18,13 @@
     <file path="/orm.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368281999788" ignored="false" />
     <file path="/database.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368305199362" ignored="false" />
     <file path="/Dummy.txt" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1366056683956" ignored="false" />
-    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369492450431" ignored="false" />
+    <file path="/config.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369553353790" ignored="false" />
     <file path="/store.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368733302834" ignored="false" />
     <file path="/usr/lib/python2.7/pickle.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <file path="/usr/lib/python2.7/tarfile.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <file path="/usr/lib/python2.7/ConfigParser.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
     <file path="/usr/lib/python2.7/xmlrpclib.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1368944010364" ignored="false" />
+    <file path="/setup.py" changelist="f3b202ba-e4c0-4301-a4cf-f4be4f66a372" time="1369600387340" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,45 +47,54 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+        <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+            <state line="8" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="store.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistence/store.py">
+        <entry file="file://$PROJECT_DIR$/src/persistence/store.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="39" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
+            <state line="30" column="39" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="collector.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/collector.py">
+        <entry file="file://$PROJECT_DIR$/src/core/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="27" selection-start="2800" selection-end="2800" vertical-scroll-proportion="0.0">
+            <state line="5" column="13" selection-start="142" selection-end="150" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/config.py">
+      <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="42" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.72477067">
+            <state line="20" column="8" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#115#222#0" expanded="true" />
+                <element signature="e#115#221#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="setup.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.36123854">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="orm.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistence/orm.py">
+        <entry file="file://$PROJECT_DIR$/src/persistence/orm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
               <folding />
@@ -119,6 +129,10 @@
         <option value="$PROJECT_DIR$/core/collector.py" />
         <option value="$PROJECT_DIR$/persistence/store.py" />
         <option value="$PROJECT_DIR$/core/config.py" />
+        <option value="$PROJECT_DIR$/persistence/core/config.py" />
+        <option value="$PROJECT_DIR$/src/persistence/core/config.py" />
+        <option value="$PROJECT_DIR$/src/core/config.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -199,7 +213,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -226,6 +240,12 @@
     <option name="myDjangoConsoleState">
       <PyConsoleSettings />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/persistence" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -306,7 +326,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <module name="deltafs" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -491,13 +511,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/persistence/orm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/site-packages/sqlalchemy/sql/expression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2236" column="0" selection-start="76297" selection-end="76297" vertical-scroll-proportion="-0.07602339" />
@@ -550,40 +563,47 @@
         <state line="2178" column="0" selection-start="81662" selection-end="81662" vertical-scroll-proportion="0.19679634" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/orm.py">
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="39" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#115#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="142" selection-end="150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/persistence/orm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+        <state line="21" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.36123854">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="39" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="27" selection-start="2800" selection-end="2800" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="42" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.72477067">
-          <folding>
-            <element signature="e#115#222#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
