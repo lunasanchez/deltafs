@@ -81,6 +81,7 @@ class FSCollector(object):
         parse all standard df output
         :param: output
         :return: list
+        ToDO: arreglar el tema de cuando un punto de montaje sale en dos líneas, por ser muy largo
         """
         df = None
         cmd = 'df -k'
